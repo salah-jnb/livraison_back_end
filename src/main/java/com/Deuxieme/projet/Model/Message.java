@@ -1,25 +1,28 @@
 package com.Deuxieme.projet.Model;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.time.LocalDate;
+import java.util.Date;
+
+@Getter
+@Setter
 @Entity
-@Table(name = "message")
 public class Message {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idMe;
-
-    @ManyToOne
-    @JoinColumn(name = "id_user_envoi")
-    private User userEnvoi;
-
-    @ManyToOne
-    @JoinColumn(name = "id_user_recu")
-    private User userRecu;
-
+    private int id;
+    private int id_user_envoi,id_user_recu;
     private String message;
-    private LocalDateTime date;
+    private LocalDate date;
 
-    // Getters and Setters
+    public Message(int id_envoy, int id_recu, String message, LocalDate d){
+        this.id_user_envoi=id_envoy;
+        this.id_user_recu=id_recu;
+        this.message=message;
+        this.date=d;
+    }
+    public Message(){}
+    // Getters et Setters sont appeleé par les anotations @Getter et @Setter
 }
