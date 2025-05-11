@@ -16,7 +16,7 @@ public class MessageServiceImpl {
     @Autowired
     private MessageRepository repository;
     public String Envoyer(Message m){
-        Message message=new Message(m.getId_user_envoi(),m.getId_user_recu(),m.getMessage(),m.getDate());
+        Message message=new Message(m.getIdEnvoy(),m.getId_user_recu(),m.getMessage(),m.getDate());
         if (repository.save(message)==null){
             return "Message non envoyer";
         }else {

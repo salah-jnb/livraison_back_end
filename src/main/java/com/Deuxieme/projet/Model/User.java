@@ -29,10 +29,10 @@ public class User {
     @Column(name = "photodeprofil", columnDefinition = "LONGBLOB")
     private byte[] photodeprofil;
 
-    @OneToMany(mappedBy = "userEnvoi")
+    @OneToMany(mappedBy = "id_user_envoi")
     private List<Message> messagesEnvoyes;
 
-    @OneToMany(mappedBy = "userRecu")
+    @OneToMany(mappedBy = "id_user_recu")
     private List<Message> messagesRecus;
 
     // Méthodes setters

@@ -7,8 +7,7 @@ import lombok.Setter;
 import java.time.LocalDate;
 import java.util.Date;
 
-@Getter
-@Setter
+
 @Entity
 public class Message {
     @Id
@@ -24,5 +23,31 @@ public class Message {
         this.date=d;
     }
     public Message(){}
-    // Getters et Setters sont appeleé par les anotations @Getter et @Setter
+    public int getIdEnvoy(){
+        return id_user_envoi;
+    }
+    public int getId_user_recu(){
+        return id_user_recu;
+    }
+    public int getId(){
+        return id;
+    }
+    public String getMessage(){
+        return message;
+    }
+    public LocalDate getDate(){
+        return date;
+    }
+    public void setId(int id){
+        this.id=id;
+    }
+    public void setId_user_envoi(int id){
+        this.id_user_envoi=id;
+    }
+    public void setMessage(String m){
+        this.message=m;
+    }
+    public void setDate(LocalDate d){
+        this.date=d;
+    }
 }
